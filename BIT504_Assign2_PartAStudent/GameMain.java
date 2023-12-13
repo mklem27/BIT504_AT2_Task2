@@ -41,8 +41,8 @@ public class GameMain extends JPanel implements MouseListener{
 	/** Constructor to setup the UI and game components on the panel */
 	public GameMain() {   
 		
-		// TODO: This JPanel fires a MouseEvent on MouseClicked so add required event listener to 'this'.          
-	    
+		// This JPanel fires a MouseEvent on MouseClicked so add required event listener to 'this'.          
+	    addMouseListener(this); // Handles mouse events such as clicks
 	    
 		// Setup the status bar (JLabel) to display status message       
 		statusBar = new JLabel("         ");       
