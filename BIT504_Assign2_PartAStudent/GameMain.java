@@ -131,7 +131,7 @@ public class GameMain extends JPanel implements MouseListener{
 				}
 			}
 			 currentState = GameState.Playing;
-			 currentPlayer = Player.Cross;
+			 currentPlayer = Player.Cross; // X always begins the game
 		}
 		
 		
@@ -142,7 +142,7 @@ public class GameMain extends JPanel implements MouseListener{
 		 */
 		public void updateGame(Player thePlayer, int row, int col) {
 			//check for win after play
-			if(board.hasWon(thePlayer, row, col)) {
+			if(board.hasWon(thePlayer, row, col)) { // Checks whether current player has won or not
 				
 				// Check which player has won and update the currentstate to the appropriate gamestate for the winner
 				if(thePlayer == Player.Cross) { // Checks if Cross won
@@ -164,7 +164,7 @@ public class GameMain extends JPanel implements MouseListener{
 		 *  UpdateGame is called which will call the methods to check for winner or Draw. if none then GameState remains playing.
 		 *  If win or Draw then call is made to method that resets the game board.  Finally a call is made to refresh the canvas so that new symbol appears*/
 	
-	public void mouseClicked(MouseEvent e) {  
+	public void mouseClicked(MouseEvent e) {  // Players are able to click any cell to restart the game
 	    // get the coordinates of where the click event happened            
 		int mouseX = e.getX();             
 		int mouseY = e.getY();             
@@ -178,7 +178,7 @@ public class GameMain extends JPanel implements MouseListener{
 				// update currentState                  
 				updateGame(currentPlayer, rowSelected, colSelected); 
 				// Switch player
-				if (currentPlayer == Player.Cross) {
+				if (currentPlayer == Player.Cross) { // Game play alternates 
 					currentPlayer =  Player.Nought;
 				}
 				else {
