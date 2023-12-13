@@ -79,7 +79,7 @@ public class GameMain extends JPanel implements MouseListener{
 				
 				
 				// Set the default close operation of the frame to exit_on_close
-		        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
+		        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				
 				frame.pack();             
 				frame.setLocationRelativeTo(null);
@@ -87,6 +87,7 @@ public class GameMain extends JPanel implements MouseListener{
 	         }
 		 });
 	}
+	
 	/** Custom painting codes on this JPanel */
 	public void paintComponent(Graphics g) {
 		//fill background and set colour to white
@@ -100,13 +101,12 @@ public class GameMain extends JPanel implements MouseListener{
 			statusBar.setForeground(Color.BLACK);          
 			if (currentPlayer == Player.Cross) {   
 			
-				//TODO: use the status bar to display the message "X"'s Turn
-
-				
+				// Use the status bar to display the message "X"'s Turn
+				statusBar.setText("X's Turn");	// Displays when it's Cross's turn			
 			} else {    
 				
-				//TODO: use the status bar to display the message "O"'s Turn
-
+				// Use the status bar to display the message "O"'s Turn
+				statusBar.setText("O's Turn"); // Displays when it's Nought's turn
 				
 			}       
 			} else if (currentState == GameState.Draw) {          
