@@ -28,7 +28,7 @@ public class GameMain extends JPanel implements MouseListener{
 	 	 
 	// Create the enumeration for the variable below (GameState currentState)
 	public enum GameState {
-		Playing, Draw, Cross_won, Nought_won
+		Playing, Draw, Cross_won, Nought_won // Different states of the game
 	}
 	private GameState currentState; 
 	
@@ -142,14 +142,16 @@ public class GameMain extends JPanel implements MouseListener{
 			//check for win after play
 			if(board.hasWon(thePlayer, row, col)) {
 				
-				// TODO: check which player has won and update the currentstate to the appropriate gamestate for the winner
-
-				
-			} else 
-				if (board.isDraw ()) {
+				// Check which player has won and update the currentstate to the appropriate gamestate for the winner
+				if(thePlayer == Player.Cross) { // Checks if Cross won
+					currentState = GameState.Cross_won; 
+				} else if(thePlayer == Player.Nought) { // Checks if Nought won
+					currentState = GameState.Nought_won; 
+				}				
+			} else if (board.isDraw ()) { // Checks if game is a draw
 					
-				// TODO: set the currentstate to the draw gamestate
-
+				// Set the currentstate to the draw gamestate
+				currentState = GameState.Draw; 
 			}
 			//otherwise no change to current state of playing
 		}
