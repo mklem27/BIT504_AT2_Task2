@@ -58,11 +58,11 @@ public class GameMain extends JPanel implements MouseListener{
 		setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT + 30));
 		
 		
-		// TODO: Create a new instance of the game "Board"class. HINT check the variables above for the correct name
-
+		// Create a new instance of the game "Board"class.
+		board = new Board(); // New instance created
 		
-		//TODO: call the method to initialise the game board
-
+		// Call the method to initialize the game board
+		initGame();
 	}
 	
 	public static void main(String[] args) {
