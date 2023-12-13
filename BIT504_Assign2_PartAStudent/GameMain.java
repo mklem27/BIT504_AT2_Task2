@@ -122,7 +122,7 @@ public class GameMain extends JPanel implements MouseListener{
 		}
 		
 	
-	  /** Initialise the game-board contents and the current status of GameState and Player) */
+	  /** Initialize the game-board contents and the current status of GameState and Player) */
 		public void initGame() {
 			for (int row = 0; row < ROWS; ++row) {          
 				for (int col = 0; col < COLS; ++col) {  
@@ -184,14 +184,16 @@ public class GameMain extends JPanel implements MouseListener{
 				else {
 					currentPlayer = Player.Cross;
 				}
+				
+				repaint(); // This method triggers a call to the paintComponent(Graphics g) which will redraw based on the updated game state.
 			}             
 		} else {        
 			// game over and restart              
 			initGame();            
 		}   
 		
-		//TODO: redraw the graphics on the UI          
-           
+		// Redraw the graphics on the UI          
+        repaint();   
 	}
 		
 	
