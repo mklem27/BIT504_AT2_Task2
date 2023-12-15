@@ -26,10 +26,6 @@ public class GameMain extends JPanel implements MouseListener{
 	// the game board 
 	private Board board;
 	 	 
-	// Create the enumeration for the variable below (GameState currentState)
-	public enum GameState {
-		Playing, Draw, Cross_won, Nought_won // Different states of the game
-	}
 	private GameState currentState; 
 	
 	// the current player
